@@ -1,14 +1,21 @@
+# pyinstaller --onefile --windowed your_script.py
+#pip install pyinstaller
+
+
 from winotify import Notification
 
 toast = Notification(
-    app_id="자세교정 AI",
-    title="자세교정 AI",
-    msg="<b>너무 오랫동안 앉아 있었습니다.</b>\n<i>휴식이나 스트레칭을 권장 합니다.</i>",  # HTML 태그 사용
-    icon="C:/Users/user/Desktop/window_toast_massage/window_toast_ms/images/warnning.ico",
+    app_id="로컬디스크 C",
+    title="로컬디스크 C",
+    msg="자세가 틀어졌습니다. 똑바로 앉아주세요",  # HTML 태그 제거
+    icon="C:/Users/user/Downloads/window_toast_ms-main/window_toast_ms/images/warnning.ico",
     duration="short"
 )
 
-# 알림에 버튼 추가도 가능합니다
-toast.add_actions(label="스트레칭 방법 보기", launch="https://www.youtube.com/watch?v=MTU4iCDntjs&t=191s")
+# 알림에 버튼 추가
+toast.add_actions(
+    label="올바르게 의자 앉는법", 
+    launch="https://www.youtube.com/watch?v=3tCjbwNu9l0"  # 실제 유튜브 영상 ID로 교체
+)
 
 toast.show()
